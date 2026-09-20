@@ -171,38 +171,52 @@ img {
         .logo-image:hover {
             transform: rotate(360deg) scale(1.1);
         }
-nav ul{
+.nav-menu ul{
     display: flex;
     gap: 28px;
     list-style: none;
     align-items: center;
 }
 
-nav ul li a{
+.nav-menu ul li a{
     text-decoration: none;
-    color: #000000;
-    font-size: 25px;
+    color: #f6f3e3;
+    font-size: 20px;
     font-weight: 500;
     position: relative;
     transition: 0.3s ease;
 }
-nav ul li a::after{
+.nav-menu ul li a::after{
     content: "";
     position: absolute;
     bottom: -6px;
     left: 0;
     width: 0%;
-    height: 1px;
+    height: 2px;
     background: #aa9073;
     transition: 0.3s ease;
 }
 
-nav ul li a:hover{
+.nav-menu ul li a:hover{
     color: #aa9073;
 }
 
-nav ul li a:hover::after{
+.nav-menu ul li a:hover::after{
     width: 100%;
+}
+
+.mobile-nav-icon{
+    display: none;
+}
+
+.mobile-menu-btn{
+    display: none;
+}
+
+.header-actions{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
         nav ul li a::before {
@@ -1454,21 +1468,160 @@ nav ul li a:hover::after{
         }
 
         @media (max-width: 768px) {
-            header {
-                padding: 12px 20px;
+            .header {
+                padding: 10px 16px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                background: rgba(14, 12, 10, 0.95) !important;
+                backdrop-filter: blur(20px) !important;
+                -webkit-backdrop-filter: blur(20px) !important;
+                border-bottom: 1px solid rgba(170, 144, 115, 0.3) !important;
             }
             
             .logo-image {
-                width: 45px;
-                height: 45px;
+                height: 42px !important;
+                width: auto !important;
+                object-fit: contain !important;
             }
-            
-            nav ul {
-                gap: 15px;
+
+            .brand-text {
+                display: none !important;
             }
-            
-            nav ul li a {
-                font-size: 14px;
+
+            .header-actions {
+                display: flex !important;
+                align-items: center !important;
+                gap: 14px !important;
+            }
+
+            .cart-nav-icon {
+                font-size: 22px !important;
+                color: #f6f3e3 !important;
+                cursor: pointer !important;
+                position: relative !important;
+            }
+
+            /* زر القائمة الثلاثية للهاتف (Hamburger Menu) */
+            .mobile-menu-btn {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 42px !important;
+                height: 42px !important;
+                background: rgba(170, 144, 115, 0.15) !important;
+                border: 1px solid rgba(170, 144, 115, 0.4) !important;
+                border-radius: 10px !important;
+                color: #f6f3e3 !important;
+                font-size: 20px !important;
+                cursor: pointer !important;
+                transition: all 0.3s ease !important;
+            }
+
+            .mobile-menu-btn:active {
+                background: #aa9073 !important;
+                color: #120e0a !important;
+                transform: scale(0.94) !important;
+            }
+
+            /* القائمة المنسدلة تحت الهيدر بانبثاق سلس */
+            .nav-menu {
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                width: 100% !important;
+                background: rgba(14, 12, 10, 0.98) !important;
+                backdrop-filter: blur(25px) !important;
+                -webkit-backdrop-filter: blur(25px) !important;
+                border-bottom: 2px solid #aa9073 !important;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7) !important;
+                max-height: 0 !important;
+                opacity: 0 !important;
+                overflow: hidden !important;
+                pointer-events: none !important;
+                transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease !important;
+                z-index: 9999 !important;
+            }
+
+            .nav-menu.open {
+                max-height: 350px !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+            }
+
+            .nav-menu ul {
+                display: flex !important;
+                flex-direction: column !important;
+                padding: 12px 20px 18px !important;
+                gap: 0 !important;
+                list-style: none !important;
+                width: 100% !important;
+            }
+
+            .nav-menu ul li {
+                width: 100% !important;
+                border-bottom: 1px solid rgba(170, 144, 115, 0.15) !important;
+            }
+
+            .nav-menu ul li:last-child {
+                border-bottom: none !important;
+            }
+
+            .nav-menu ul li a {
+                display: flex !important;
+                align-items: center !important;
+                gap: 12px !important;
+                padding: 14px 10px !important;
+                color: #f6f3e3 !important;
+                font-size: 18px !important;
+                font-weight: 600 !important;
+                text-decoration: none !important;
+                transition: all 0.25s ease !important;
+                width: 100% !important;
+            }
+
+            .nav-menu ul li a:hover,
+            .nav-menu ul li a:active {
+                color: #aa9073 !important;
+                padding-right: 18px !important;
+                background: rgba(170, 144, 115, 0.1) !important;
+                border-radius: 8px !important;
+            }
+
+            .mobile-nav-icon {
+                display: inline-block !important;
+                color: #aa9073 !important;
+                font-size: 16px !important;
+                width: 24px !important;
+                text-align: center !important;
+            }
+
+            /* تنزيل وتعديل علامة عُش التي تدور في الهاتف */
+            .floating-logo {
+                bottom: 15px !important;
+                left: 15px !important;
+                width: 50px !important;
+                height: 50px !important;
+                border: 2px solid #aa9073 !important;
+                background: #ffffff !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+                z-index: 900 !important;
+            }
+
+            .floating-logo-image {
+                padding: 4px !important;
+                object-fit: contain !important;
+            }
+
+            /* تحسينات الهيرو وشعار عُش في الهاتف */
+            .hero-logo-image {
+                width: 130px !important;
+                height: 130px !important;
+                margin: 10px auto 20px auto !important;
+                padding: 10px !important;
+                background: #ffffff !important;
+                border: 2px solid #aa9073 !important;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
             }
             
             .hero {
@@ -1755,19 +1908,7 @@ padding-bottom:35px !important;
     justify-content: center;
     font-weight: bold;
 }
-@media (max-width: 768px){
-    .brand-text{
-        display: none;
-    }
-
-    .header{
-        padding: 15px 20px;
-    }
-
-    nav ul{
-        gap: 15px;
-    }
-}
+/* تم دمج تحسينات الهيدر للهاتف أعلاه */
 
         /* خلفية السلة الشفافة */
         .cart-overlay {
@@ -2238,22 +2379,28 @@ padding-bottom:35px !important;
     <!-- LUXURY CENTER BRAND (فقط للشاشات الكبيرة) -->
     <div class="brand-text">
    عش حيث يجد العطر نفسه 
-</div>
+    </div>
 
-    <!-- NAV -->
-    <nav>
+    <!-- NAV (القائمة الرئيسية والمنسدلة للجوال) -->
+    <nav id="nav-menu" class="nav-menu">
         <ul>
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#gender">العطور</a></li>
-            <li><a href="#packaging">التغليف</a></li>
-            <li><a href="#gallery">تصوريكم</a></li>
-
-            <li class="cart-nav-icon" onclick="toggleCart()">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-badge" id="cart-badge">0</span>
-            </li>
+            <li><a href="#home" onclick="closeMobileMenu()"><i class="fas fa-home mobile-nav-icon"></i> الرئيسية</a></li>
+            <li><a href="#gender" onclick="closeMobileMenu()"><i class="fas fa-spray-can mobile-nav-icon"></i> العطور</a></li>
+            <li><a href="#packaging" onclick="closeMobileMenu()"><i class="fas fa-box-open mobile-nav-icon"></i> التغليف</a></li>
+            <li><a href="#gallery" onclick="closeMobileMenu()"><i class="fas fa-camera mobile-nav-icon"></i> تصويركم</a></li>
         </ul>
     </nav>
+
+    <!-- أدوات الهيدر (السلة + زر القائمة الثلاثية للهاتف) -->
+    <div class="header-actions">
+        <div class="cart-nav-icon" onclick="toggleCart()" title="سلة المشتريات">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" id="cart-badge">0</span>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="القائمة">
+            <i class="fas fa-bars" id="menu-icon"></i>
+        </button>
+    </div>
 
 </header>
     <!-- الهيرو -->
@@ -2537,6 +2684,37 @@ onclick="addToCart('البكج الثلاثي',20,'images\whole package.jpeg')">
     </div>
 
     <script>
+    // التحكم في القائمة المنسدلة للهاتف
+    function toggleMobileMenu() {
+        const nav = document.getElementById('nav-menu');
+        const icon = document.getElementById('menu-icon');
+        if (!nav) return;
+        const isOpen = nav.classList.toggle('open');
+        if (icon) {
+            icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+        }
+    }
+
+    function closeMobileMenu() {
+        const nav = document.getElementById('nav-menu');
+        const icon = document.getElementById('menu-icon');
+        if (nav && nav.classList.contains('open')) {
+            nav.classList.remove('open');
+            if (icon) icon.className = 'fas fa-bars';
+        }
+    }
+
+    // إغلاق القائمة عند النقر في أي مكان بالصفحة
+    document.addEventListener('click', function(e) {
+        const nav = document.getElementById('nav-menu');
+        const btn = document.getElementById('mobile-menu-btn');
+        if (nav && nav.classList.contains('open')) {
+            if (!nav.contains(e.target) && !btn.contains(e.target)) {
+                closeMobileMenu();
+            }
+        }
+    });
+
         // مصفوفة لتخزين المنتجات
     let cart = [];
 
