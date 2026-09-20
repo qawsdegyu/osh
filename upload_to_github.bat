@@ -39,7 +39,7 @@ git add .
 :: 4. عمل Commit
 echo.
 echo [3/4] إنشاء الـ Commit...
-git commit -m "Initial commit - رفع موقع عش للعطور"
+git commit -m "تحديث الشعار وأيقونات الموقع ووسوم المشاركة والبحث (Logo, Favicon & Social Meta Tags)"
 
 :: 5. الرفع إلى GitHub
 echo.

@@ -1,0 +1,23 @@
+{
+  "name": "عُش للعطور - OSH Perfume",
+  "short_name": "عُش للعطور",
+  "description": "عُش للعطور - كل لحظة تستحق عطرها الخاص. متجر عطور فاخرة وأصيلة.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f3e3",
+  "theme_color": "#aa9073",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
